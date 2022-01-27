@@ -1,4 +1,9 @@
 .laureates {
+    .text-primary{
+        @include breakpoint(mobile-max) {
+            color: $text-white !important;
+        }
+    }
     &__listing {
         @include breakpoint(mobile-max) {
             margin: 0 -3.5rem;
@@ -64,11 +69,17 @@
                     font-weight: 400;
                     position: relative;
                     transition: all .5s ease-in-out;
+                    @include breakpoint(mobile-max) {
+                        font-size: 1.8rem !important;
+                    }
                 }
                 hr {
                     background-color: $bg-color-5;
                     width: 2.6rem;
                     transition: all .5s ease-in-out;
+                    @include breakpoint(mobile-max) {
+                        width: 3.7rem;
+                    }
                 }
                 .display-3 {
                     font-size: 1.8rem;
@@ -76,6 +87,9 @@
                     position: relative;
                     transition: all .5s ease-in-out;
                     font-weight: bold;
+                    @include breakpoint(mobile-max) {
+                        font-size: 2.6rem !important;
+                    }
                 }
                 p {
                     font-size: 1rem;
@@ -83,6 +97,9 @@
                     font-weight: 300;
                     position: relative;
                     transition: all .5s ease-in-out;
+                    @include breakpoint(mobile-max) {
+                        font-size: 1.4rem;
+                    }
                 }
                 &:before {
                     content: "";
@@ -182,6 +199,17 @@
             left: 10rem;
             transform: translateY(-50%);
             width: 9rem;
+        }
+    }
+    .link-view {
+        @include breakpoint(mobile-max) {
+            color: $text-white;
+            text-decoration: none;
+            line-height: initial;
+        }
+        .ip-arrow-right{
+            font-size: 2rem;
+            font-weight: bold;
         }
     }
 }
@@ -291,11 +319,11 @@
             top: -14rem;
             left: -16%;
         }
-        .jury__slider {
-            .slick-list {
-                // overflow: visible;
-            }
-        }   
+        // .jury__slider {
+        //     .slick-list {
+        //         overflow: visible;
+        //     }
+        // }   
         .vertical-year {
             right: auto;
             left: 10rem;

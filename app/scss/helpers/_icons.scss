@@ -27,16 +27,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.ip-user {
-  &:before {
-    content: $ip-user; 
-  }
-}
-.ip-tick {
-  &:before {
-    content: $ip-tick; 
-  }
-}
 .ip-close {
   &:before {
     content: $ip-close; 
@@ -57,6 +47,11 @@
     content: $ip-youtube; 
   }
 }
+.ip-user {
+  &:before {
+    content: $ip-user; 
+  }
+}
 .ip-up-arrow {
   &:before {
     content: $ip-up-arrow; 
@@ -65,6 +60,11 @@
 .ip-twitter {
   &:before {
     content: $ip-twitter; 
+  }
+}
+.ip-tick {
+  &:before {
+    content: $ip-tick; 
   }
 }
 .ip-search {
@@ -127,3 +127,4 @@
     content: $ip-arrow-left; 
   }
 }
+

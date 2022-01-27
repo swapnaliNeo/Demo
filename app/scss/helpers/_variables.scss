@@ -11,6 +11,8 @@ $text-color-1: #3F3F3F;
 $text-color-2: #F1AC4D;
 $text-color-3: #2491FF;
 $text-color-4: #757575;
+$text-white: #FFFFFF;
+$text-black: #000000;
 
 $border-color: #C7CBD6;
 $border-color-1: #5BC0DE;
@@ -25,6 +27,10 @@ $bg-color-4: #F7F6F9;
 $bg-color-5: #EFEEF3;
 $bg-color-6: #223247;
 $bg-color-7: #FAFAFA;
+$bg-color-8: #F3F3F3;
+
+$active-slider-color: #1492E6;
+$inactive-slider-color: #17003138;
 
 // path
 $images-path: '../images' !default;
@@ -35,14 +41,14 @@ $images-path: '../images' !default;
 $icomoon-font-family: "icomoon" !default;
 $icomoon-font-path: "../fonts/icomoon/" !default;
 
-$ip-user: "\e902";
-$ip-tick: "\e914";
 $ip-close: "\e913";
 $ip-right-arrow: "\e912";
 $ip-share: "\e900";
 $ip-youtube: "\e901";
+$ip-user: "\e902";
 $ip-up-arrow: "\e903";
 $ip-twitter: "\e904";
+$ip-tick: "\e90a";
 $ip-search: "\e90b";
 $ip-quote: "\e90c";
 $ip-play-fill: "\e90d";

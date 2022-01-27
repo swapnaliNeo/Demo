@@ -6,6 +6,10 @@
     text-transform: uppercase;
     color: $primary-color;
     border-color: $primary-color;
+    @include breakpoint(mobile-max) {
+        padding: 2.12rem 5.45rem;
+        font-size: 1.3rem;
+    }
     &:hover, &:active, &:focus {
         background-color: $primary-color;
         color: #fff;

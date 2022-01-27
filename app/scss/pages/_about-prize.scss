@@ -1,33 +1,91 @@
+.commonBanner{
+    &__img{
+        &.rotating {
+            img{
+                @include breakpoint(mobile-max) {
+                    max-width: 18rem;
+                }
+            }
+        }
+    }
+}
+#about-the-prize {
+    &.commonContent{
+        @include breakpoint(mobile-max) {
+            padding: 3.2rem 0 6rem;
+        }
+    }
+    .commonContent__heading{
+        @include breakpoint(mobile-max) {
+            margin: 0 0 1.3rem;
+        }
+        .fs-3{
+            @include breakpoint(mobile-max) {
+                font-size: 3.4rem !important;
+            }
+        }
+    }
+    .commonContent__content{
+        @include breakpoint(mobile-max) {
+            font-size: 1.6rem;
+        }
+    }
+}
 .the-medallion {
     @include background-color-rgba($bg-color-5, 0.5);
     padding: 12rem 0;
+    @include breakpoint(mobile-max) {
+        padding: 3.8rem 0;
+    }
     &__content {
         p {
             color: $primary-color;
+            @include breakpoint(mobile-max) {
+                font-size: 1.6rem;
+            }
         }
     }
     &__img {
+        @include breakpoint(mobile-max) {
+            align-items: start !important;
+        }
         img {
             width: 22.6rem;
             height: 22.6rem;
             object-fit: contain;
+            @include breakpoint(mobile-max) {
+                width: 19.1rem;
+                height: 100%;
+            }
         }
         ul {
             width: calc(100% - 22.6rem);
             padding-left: 5rem;
+            @include breakpoint(mobile-max) {
+                padding-left: 4.1rem;
+                width: 100%;
+            }
             li {
                 padding: 2.4rem 1.8rem;
                 border-top: 0.1rem solid $text-color;
-                
+                @include breakpoint(mobile-max) {
+                    padding: 1.4rem 0.8rem;
+                }
             }
         }
         &-list {
             .fs-3 {
                 font-weight: 500;
                 color: $primary-color;
+                @include breakpoint(mobile-max) {
+                    font-size: 2rem !important;
+                }
             }
             .fs-6 {
                 font-weight: 300;
+                @include breakpoint(mobile-max) {
+                    font-size: 1rem !important;
+                }
             }
         }
     }
@@ -35,22 +93,67 @@
 
 .statutes {
     padding: 7.1rem 0;
+    @include breakpoint(mobile-max) {
+        padding: 5.2rem 0 6.5rem;
+        background-color: $bg-color-8;
+    }
+    .container{
+        @include breakpoint(mobile-max) {
+            padding: 0 1.6rem;
+        }
+    }
     .display-4 {
         color: $primary-color;
         font-weight: 600;
     }
-    .fs-2 {
-        color: $primary-color;
-    }
-    p {
-        color: $primary-color;
+    &__content{
+        .fs-2 {
+            color: $primary-color;
+            @include breakpoint(mobile-max) {
+                font-size: 3.4rem !important;
+            }
+        }
+        p {
+            color: $primary-color;
+            @include breakpoint(mobile-max) {
+                font-size: 1.6rem;
+            }
+        }
+        .my-4 {
+            @include breakpoint(mobile-max) {
+                margin-top: 2.4rem !important;
+                margin-bottom: 2.4rem !important;
+            }
+        }
+        .display-2{
+            @include breakpoint(mobile-max) {
+                font-size: 3.4rem !important;
+                color: $primary-color;
+            }
+        }
+        .highlighted_box{
+            p{
+                font-weight: 600;
+                &:last-child{
+                    margin-bottom: 0;
+                }
+            }
+        }
     }
     &-list {
         padding-left: 5.6rem;
-        border-bottom: 0.1rem solid $border-color;
+        // border-bottom: 0.1rem solid $border-color;
+        @include breakpoint(mobile-max) {
+            padding-top: 1.4rem;
+            border: none;
+        }
         li {
             padding: 1.4rem 0;
             position: relative;
+            @include breakpoint(mobile-max) {
+                font-size: 1.6rem;
+                padding: 0;
+            }
             &::before {
                 content: "";
                 position: absolute;
@@ -60,6 +163,21 @@
                 height: 0.1rem;
                 left: -5.5rem;
                 top: 2rem;
+                @include breakpoint(mobile-max) {
+                    width: 1.5rem;
+                    left: -4.5rem;
+                }
+            }
+            &:last-child {
+                @include breakpoint(mobile-max) {
+                    padding-bottom: 1.4rem;
+                    border-bottom: 0.1rem solid $border-color;
+                }
+            }
+        }
+        li + li {
+            @include breakpoint(mobile-max) {
+                margin: 2.4rem 0 0;
             }
         }
     }
@@ -74,21 +192,63 @@
         margin-top: 10rem;
         justify-content: end;
     }
+    &.bg-gray-1{
+        @include breakpoint(mobile-max) {
+            background-color: $bg-color-4;
+            padding: 2.9rem 0 5.1rem;
+        }
+    }
+    .custom_down_arrow{
+        height: 9rem;
+        .ip-arrow-right{
+            &:before{
+                @include breakpoint(mobile-max) {
+                    position: absolute;
+                    top: 2.5rem;
+                    color: $text-black;
+                    transform: rotate(90deg);
+                    left: 50%;
+                    font-size: 2rem;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
 }
 
 .key_dates {
+    .fs-3{
+        @include breakpoint(mobile-max) {
+            font-size: 3.4rem !important;
+            color: $primary-color;
+        }
+    }
     &-sec {
         &__block {
             padding: 1rem 2rem;
             margin: 0.2rem 0;
             position: relative;
+            @include breakpoint(mobile-max) {
+                padding: 2rem 2rem 2rem 2.8rem;
+                margin: 0.1rem 0;
+            }
             .fs-4 {
                 font-weight: 500;
                 margin-bottom: 0.5rem;
                 color: $primary-color;
+                @include breakpoint(mobile-max) {
+                    font-weight: 600;
+                    margin-bottom: 0.7rem;
+                    font-size: 2.1rem !important;
+                }
             }
             p {
                 font-size: 1.3rem;
+                @include breakpoint(mobile-max) {
+                    font-size: 1.6rem;
+                    color: $primary-color;
+                    margin-bottom: 0;
+                }
             }
             &:before {
                 content: "";
@@ -98,6 +258,9 @@
                 height: 100%;
                 left: 0;
                 top: 0;
+                @include breakpoint(mobile-max) {
+                    width: 0.8rem;
+                }
             }
             &.color-1 {
                 &::before {
@@ -403,230 +566,6 @@
         }
         .news-meta {
             font-size: 1.3rem;
-        }
-    }
-}
-
-.excellence {
-    &__block {
-        padding: 5rem 5.8rem;
-        height: 100%;
-        position: relative;
-        .fs-3, p, .display-2 {
-            font-weight: 300;
-            color: $primary-color;
-        }
-        .arrow-animate {
-            &__link {
-                .fa-icon {
-                    font-size: 2rem;
-                    color: $primary-color;
-                }
-            }
-        }
-    }
-    .video__block {
-        padding-bottom: 2rem;
-        .video {
-            margin-bottom: 1rem;
-            position: relative;
-        }
-        .play-icon {
-            width: 7.8rem;
-            height: 7.8rem;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            .fa-icon {
-                font-size: 2rem;
-            }
-            &:hover {
-                @include background-color-rgba(#fff, 0.5);
-                .fa-icon {
-                    @include color-rgba($primary-color, 0.6);
-                }
-            }
-        }
-    }
-    .imagebg__block {
-        background-color: #8ED7CC;
-        padding: 2rem;
-        display: flex;
-        justify-content: end;
-        flex-direction: column;
-        img {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            bottom: 0;
-            right: 0;
-        }
-        .fs-3, p {
-            position: relative;
-            color: #fff;
-        }
-    }
-    .category__block {
-        background-color: #FFE69B;
-        padding: 4rem 2.4rem 4rem 5.8rem;
-        p {
-            margin-bottom: 0.5rem;
-            position: relative;
-            z-index: 1;
-        }
-        .fs-3 {
-            position: relative;
-            z-index: 1;
-        }
-        .big-text {
-            @include color-rgba($text-color-2, 0.5);
-            font-size: 9rem;
-            z-index: 1;
-            left: 4rem;
-        }
-        .arrow-animate__inner {
-            position: absolute;
-            display: block;
-            left: 5.8rem;
-            bottom: 2rem;
-        }
-    }
-    .about__block {
-        background-color: $text-color-2;
-        padding: 1.6rem;
-        padding-bottom: 4rem;
-        img {
-            width: 9rem;
-        }
-        .arrow-animate__inner {
-            position: absolute;
-            display: block;
-            left: 1.6rem;
-            bottom: 2rem;
-        }
-    }
-    .photo-gallery {
-        .fs-3 {
-            position: absolute;
-            display: block;
-            bottom: 2rem;
-            left: 2rem;
-            color: #fff;
-        }
-        img {
-            height: 100%;
-            object-fit: cover;
-        }
-    }
-    .withImg__block {
-        background-color: #E3E7EA;
-        display: flex;
-        align-items: end;
-        padding: 7rem 6rem;
-        img {
-            width: 168px;
-        }
-        .arrow-animate {
-            padding-left: 2rem;
-        }
-    }
-    .jury__block {
-        @include background-color-rgba(#E3E7EA, 0.5);
-        padding-top: 15rem;
-        img {
-            position: absolute;
-            display: block;
-            width: 227px;
-            height: 180px;
-            top: 0.2rem;
-            right: 0.3rem;
-        }
-        .arrow-animate {
-            width: 80%;
-            &__inner {
-                position: absolute;
-                display: block;
-                left: 5.8rem;
-                bottom: 2rem;
-            }
-        }
-    }
-    .laureates__block {
-        display: flex;
-        align-items: end;
-        img {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            display: block;
-            left: 0;
-            top: 0;
-            object-fit: cover;
-        }
-        .arrow-animate {
-            position: relative;
-            max-width: 20.8rem;
-        }
-    }
-    .press__block {
-        text-align: right;
-        img {
-            width: 103px;
-            right: 0;
-        }
-        &-content {
-            text-align: left;
-            width: 80%;
-        }
-    }
-    .isf__block {
-        display: flex;
-        background-color: #E0EFD8;
-        .arrow-animate {
-            padding-bottom: 3rem;
-            position: relative;
-            img {
-                height: 12.3rem;
-                margin-bottom: 1.5rem;
-                width: 100%;
-                object-fit: cover;
-                @include box-shadow;
-            }
-            .fs-4 {
-                color: #000;
-                font-weight: bold;
-            }
-            p {
-                font-size: 1.3rem;
-            }
-            &__inner {
-                position: absolute;
-                display: block;
-                bottom: 0;
-                left: 0;
-            }
-        }
-    }
-
-    &__filter {
-        position: absolute;
-        display: block;
-        top: 130px;
-        z-index: 9;
-        width: 100%;
-        .d-flex {
-            @include background-color-rgba(#fff, 0.9);
-            padding: 1.7rem 2.1rem;
-        }
-        .select {
-            max-width: 200px;
-        }
-        .share-sec {
-            display: flex;
-            align-items: center;
-            .share-btn {
-                font-size: 2.2rem;
-            }
         }
     }
 }
