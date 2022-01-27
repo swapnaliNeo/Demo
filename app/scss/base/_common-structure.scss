@@ -1,14 +1,14 @@
 .fs-1 {
     font-size: 3.7rem !important;
     @include breakpoint(mobile-max) {
-        font-size: 3.5rem;
+        font-size: 3.5rem !important;
     }
 }
 
 .fs-2 {
     font-size: 3.4rem !important;
     @include breakpoint(mobile-max) {
-        font-size: 2.5rem;
+        font-size: 2.5rem !important;
     }
 }
 
@@ -19,6 +19,9 @@
 .fs-4 {
     font-size: 1.5rem !important;
     font-weight: 400;
+    @include breakpoint(mobile-max) {
+        font-size: 1.6rem !important;
+    }
 }
 
 .fs-5 {
@@ -622,79 +625,3 @@
         border-radius: 1rem;
       }
   }
-
-.custom-radio {
-    display: flex;
-    align-items: center;
-    label {
-        position: relative;
-        padding-left: 2.2rem;
-        cursor: pointer;
-        display: inline-block;
-        color: $border-color;
-        line-height: 1;
-        font-size: 1.3rem;
-        text-transform: uppercase;
-        &:before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 1.6rem;
-            height: 1.6rem;
-            border: 0.1rem solid $border-color;
-            border-radius: 100%;
-        }
-        &:after {
-            content: '';
-            width: 1rem;
-            height: 1rem;
-            background: $border-color;
-            position: absolute;
-            top: 0.3rem;
-            left: 0.3rem;
-            border-radius: 100%;
-            -webkit-transition: all 0.2s ease;
-            transition: all 0.2s ease;
-        }
-    }
-    [type="radio"] {
-        &:checked, &:not(:checked) {
-            position: absolute;
-            left: -9999px;
-        }
-        &:not(:checked) {
-            + {
-                label {
-                    &:after {
-                        opacity: 0;
-                        -webkit-transform: scale(0);
-                        transform: scale(0);
-                    }
-                }
-            }
-        }
-        &:checked {
-            + {
-                label {
-                    &:after {
-                        opacity: 1;
-                        -webkit-transform: scale(1);
-                        transform: scale(1);
-                    }
-                }
-            }
-        }
-        &:hover {
-            color: $secondary-color;
-        }
-    }
-}
-
-.expand-btn {
-    font-size: 1.6rem;
-    color: $border-color;
-    &:hover {
-        color: $secondary-color;
-    }
-}

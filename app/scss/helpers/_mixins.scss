@@ -39,6 +39,9 @@ $breakpoints: (
   'desktop-min': (
     min-width: 992px,
   ),
+  'custom-ipad-max': (
+    max-width: 1024px,
+  ),
   'desktop-max': (
     max-width: 1199px,
   ),

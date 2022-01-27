@@ -1,7 +1,7 @@
 .header {
     position: fixed;
     display: block;
-    z-index: 99;
+    z-index: 9;
     width: 100%;
     transition: all 0.3s ease;
     &.darkHeader {
@@ -63,105 +63,95 @@
     .login-sec, .share-sec, .search-close {
         display: none;
     }
-}
 
-.share-sec {
-    position: relative;
-    .share-btn {
-        background-color: transparent;
-        border: 0;
-        padding: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        &.active {
-            color: $secondary-color;
-        }
-    }
-    .share-overlay {
-        position: absolute;
-        display: none;
-        background-color: #fff;
-        padding: 1.1rem 0.9rem;
-        top: 4rem;
-        right: -1rem;
-        z-index: 2;
-        .social-media {
-            padding: 0;
-            li {
-                margin: 0 0.6rem;
-                a {
-                    display: block;
-                    width: 2.8rem;
-                    height: 2.8rem;
-                    .fa-icon {
-                        font-size: 2.8rem;
-                        color: $primary-color;
-                    }
-                    &:hover {
+    .share-sec {
+        position: relative;
+        .share-overlay {
+            position: absolute;
+            display: none;
+            background-color: #fff;
+            padding: 1.6rem 1.3rem;
+            top: 4rem;
+            right: -1rem;
+            z-index: 2;
+            .social-media {
+                li {
+                    margin: 0 0.6rem;
+                    a {
+                        display: block;
+                        width: 4rem;
+                        height: 4rem;
                         .fa-icon {
-                            color: $secondary-color;
+                            font-size: 4rem;
+                            color: $primary-color;
+                        }
+                        &:hover {
+                            .fa-icon {
+                                color: $secondary-color;
+                            }
                         }
                     }
                 }
             }
+            &::before {
+                content: "";
+                width: 0;
+                height: 0;
+                border-left: 0.7rem solid transparent;
+                border-right: 0.7rem solid transparent;
+                border-bottom: 1.6rem solid #fff;
+                top: -1.6rem;
+                right: 1.4rem;
+                position: absolute;
+                display: block;
+            }
         }
-        &::before {
-            content: "";
-            width: 0;
-            height: 0;
-            border-left: 0.7rem solid transparent;
-            border-right: 0.7rem solid transparent;
-            border-bottom: 1.6rem solid #fff;
-            top: -1.6rem;
-            right: 1.4rem;
-            position: absolute;
-            display: block;
-        }
-        &.active {
-            display: block;
+        .share-btn {
+            &:hover {
+                + {
+                    .share-overlay {
+                        display: block;
+                    }
+                }
+            }
         }
     }
-}
 
-.login-sec {
-    position: relative;
-    .login-btn {
-        background-color: transparent;
-        border: 0;
-        padding: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        &.active {
-            color: $secondary-color;
-        }
-    }
-    .login-overlay {
-        position: absolute;
-        display: none;
-        background-color: #fff;
-        padding: 1rem 1.3rem;
-        top: 4rem;
-        right: -1rem;
-        z-index: 2;
-        .login-link {
-            color: $primary-color;
-        }
-        &::before {
-            content: "";
-            width: 0;
-            height: 0;
-            border-left: 0.7rem solid transparent;
-            border-right: 0.7rem solid transparent;
-            border-bottom: 1.6rem solid #fff;
-            top: -1.6rem;
-            right: 1.4rem;
+    .login-sec {
+        position: relative;
+        .login-overlay {
             position: absolute;
-            display: block;
+            display: none;
+            background-color: #fff;
+            padding: 1.6rem 1.3rem;
+            top: 4rem;
+            right: -1rem;
+            z-index: 2;
+            .login-link {
+                font-size: 2.1rem;
+                color: $primary-color;
+            }
+            &::before {
+                content: "";
+                width: 0;
+                height: 0;
+                border-left: 0.7rem solid transparent;
+                border-right: 0.7rem solid transparent;
+                border-bottom: 1.6rem solid #fff;
+                top: -1.6rem;
+                right: 1.4rem;
+                position: absolute;
+                display: block;
+            }
         }
-        &.active {
-            display: block;
+        .login-btn {
+            &:hover {
+                + {
+                    .login-overlay {
+                        display: block;
+                    }
+                }
+            }
         }
     }
 }
@@ -174,6 +164,10 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    @include breakpoint(mobile-max) {
+        width: 4.3rem;
+        height: 2.2rem;
+    }
     &-span {
        display: block;
        width: 100%;

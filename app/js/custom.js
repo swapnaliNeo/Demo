@@ -29,7 +29,7 @@ $(document).ready(function () {
     }
   });
 
-  //search open & close
+  //serch open & close
   $('.search-bar').on('click', function () {
     $('.search-sec').addClass('search-sec-active');
     $('html').addClass('overlay-open search-overlay');
@@ -39,18 +39,6 @@ $(document).ready(function () {
     $('.search-sec').removeClass('search-sec-active');
     $('html').removeClass('overlay-open search-overlay');
     $('.navbar').removeClass('d-none');
-  });
-
-
-  //share & login open-close
-  $('.share-btn').on('click', function () {
-    $(this).toggleClass('active');
-    $('.share-overlay').toggleClass('active');
-  });
-
-  $('.login-btn').on('click', function () {
-    $(this).toggleClass('active');
-    $('.login-overlay').toggleClass('active');
   });
 
   // vertical navigation
@@ -121,6 +109,15 @@ $(document).ready(function () {
     variableWidth: true,
     prevArrow: $('.prev-lectures'),
     nextArrow: $('.next-lectures'),
+    responsive: [
+      {
+        breakpoint: 767,
+        settings: {
+          dots: true,
+          arrows: false
+        }
+      }
+    ]
   });
  
   // Social Slider with Progress
@@ -144,6 +141,15 @@ $(document).ready(function () {
     variableWidth: true,
     prevArrow: $('.prev-social'),
     nextArrow: $('.next-social'),
+    responsive: [
+      {
+        breakpoint: 767,
+        settings: {
+          dots: true,
+          arrows: false
+        }
+      }
+    ]
   });
 
   // Laureates Slider with Nav
@@ -154,7 +160,15 @@ $(document).ready(function () {
     dots: false,
     vertical: true,
     draggable: false,
-    asNavFor: '.laureates__slider-nav'
+    asNavFor: '.laureates__slider-nav',
+    // responsive: [
+    //   {
+    //     breakpoint: 767,
+    //     settings: {
+    //       dots: true
+    //     }
+    //   }
+    // ]
   });
 
   $('.laureates__slider-nav').slick({
@@ -269,6 +283,15 @@ $(document).ready(function () {
     variableWidth: true,
     prevArrow: $('.prev-laureates'),
     nextArrow: $('.next-laureates'),
+    responsive: [
+      {
+        breakpoint: 767,
+        settings: {
+          dots: true,
+          arrows: false
+        }
+      }
+    ]
   });
 
   // Student Slider with Progress
@@ -335,6 +358,15 @@ $(document).ready(function () {
         centerMode: true,
         prevArrow: $('.prev-thenews'),
         nextArrow: $('.next-thenews'),
+        responsive: [
+          {
+            breakpoint: 767,
+            settings: {
+              dots: true,
+              arrows: false
+            }
+          }
+        ]
       });
     }
   }
@@ -373,18 +405,6 @@ $(document).ready(function () {
       $(this).toggleClass('showLess');
     });
 
-    // Photo Gallery Show More & Show Less
-    var $this = $('.photoSec .items');
-    if ($this.find('.photoSec .item').length > 3) {
-        $('.photoSec .items').append('<div class="mt-5"><a href="javascript:;" class="link-view showMore"></a></div>');
-    }
-
-    $('.photoSec .items .item').slice(0,6).addClass('shown');
-    $('.photoSec .items .item').not('.shown').hide();
-    $('.photoSec .items .showMore').on('click',function(){
-      $('.photoSec .items .item').not('.shown').toggle(300);
-      $(this).toggleClass('showLess');
-    });
 
     // Select custom menu
     $('select').each(function(){
@@ -433,29 +453,18 @@ $(document).ready(function () {
   
   });
 
-  // The team slider 
-  // Timeline Slider with Nav
-  $('.theTeam__slider').slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-    dots: false,
-    draggable: false,
-    asNavFor: '.theTeam__nav'
+  // navbar as a dropdown in mobile mode
+  $(".navbar ul").on("click", ".active_page", function() {
+    $(this).closest(".navbar ul").children('li:not(.active_page)').toggle();
   });
 
-  $('.theTeam__nav').slick({
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    asNavFor: '.theTeam__slider',
-    dots: false,
-    arrows: true,
-    focusOnSelect: true,
-    draggable: false,
+  var allOptions = $(".navbar ul").children('li:not(.active_page)');
+  $(".navbar ul").on("click", "li:not(.active_page)", function() {
+      allOptions.removeClass('selected');
+      $(this).addClass('selected');
+      $(".navbar ul").children('.active_page').html($(this).html());
+      allOptions.toggle();
   });
-
-  $('.groupBtns .btn').click( function() {
-    $(this).addClass('active').siblings().removeClass('active');
-  });
+  // navbar as a dropdown in mobile mode end
 
 });

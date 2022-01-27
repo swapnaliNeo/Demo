@@ -35,10 +35,20 @@
             justify-content: center;
             z-index: 999;
             position: relative;
-            .small-text {
-                font-size: 1rem;
-                text-transform: uppercase;
-                font-weight: 400;
+            .fs-1{
+                @include breakpoint(mobile-max) {
+                    line-height: 4.5rem;
+                }
+                .small-text {
+                    font-size: 1rem;
+                    text-transform: uppercase;
+                    font-weight: 400;
+                    @include breakpoint(mobile-max) {
+                        font-size: 1.6rem;
+                        letter-spacing: 0.16rem;
+                        line-height: initial;
+                    }
+                }
             }
             .hr {
                 width: 5rem;
@@ -49,8 +59,18 @@
                 max-width: 58%;
             }
         }
-        .slick-dots {
-            bottom: 0;
+        // .slick-dots {
+        //     bottom: 0;
+        // }
+    }
+    .slider-dots{
+        .custom-dots{
+            .slick-dots{
+                bottom: 0;
+                @include breakpoint(mobile-max) {
+                    display: none !important;
+                }
+            }
         }
     }
 }
@@ -86,15 +106,22 @@
             transform: rotate(180deg);
             border-radius: 100%;
             border: 0.1rem solid #fff;
-            @include breakpoint(custom-small-mobile-max){
-                width: 3.4rem;
-                height: 3.4rem;
+            @include breakpoint(mobile-max) {
+                width: 6.4rem;
+                height: 6.4rem;
             }
+            // @include breakpoint(custom-small-mobile-max){
+            //     width: 3.4rem;
+            //     height: 3.4rem;
+            // }
             .fa-icon {
                 font-size: 1.8rem;
                 color: #fff;
                 -webkit-transform: perspective(0.1rem) translateZ(0);
                 transform: perspective(0.1rem) translateZ(0);
+                @include breakpoint(mobile-max) {
+                    font-size: 2.6rem;
+                }
             }
             &:hover {
                 .fa-icon {
@@ -115,11 +142,15 @@
 
 .in_thenews {
     @include breakpoint(mobile-max){
-        padding-bottom: 5rem;
+        padding-bottom: 6.5rem;
+        background-color: $bg-color-5;
     }
     &__block {
         position: relative;
         height: 100%;
+        @include breakpoint(mobile-max) {
+            width: 100%;
+        }
         &-content {
             position: absolute;
             display: block;
@@ -135,7 +166,7 @@
                 position: relative;
                 transition: font-size 0.3s ease-out;
                 @include breakpoint(mobile-max){
-                    font-size: 1.6rem !important;
+                    font-size: 2.6rem !important;
                 }
             }
             &:before {
@@ -147,6 +178,11 @@
                 background: linear-gradient(180deg, rgba(31,37,61,0) 0%, rgba(31,37,61,0.804359243697479) 100%);
                 bottom: 0;
                 left: 0;
+            }
+            .news-meta{
+                @include breakpoint(mobile-max) {
+                    font-size: 1.6rem;
+                }
             }
         }
         &:hover {
@@ -161,6 +197,9 @@
     }
     &__slider {
         margin: 0 -3.5rem;
+        @include breakpoint(mobile-max) {
+            margin-bottom: 3.8rem !important;
+        }
         .in_thenews__block {
             width: 37.8rem;
             height: 29.4rem;
@@ -168,12 +207,48 @@
                 width: 32rem;
             }
         }
+        .slick-dots{
+            line-height: initial;
+            bottom: -3.8rem;
+            li{
+                button{
+                    @include breakpoint(mobile-max) {
+                        background-color: $inactive-slider-color;
+                        border: 0.1rem solid transparent;
+                    }
+                }
+                &.slick-active{
+                    button {
+                        @include breakpoint(mobile-max) {
+                            background-color: $active-slider-color;
+                            border-color: $active-slider-color;
+                        }
+                    }
+                }
+            }
+        }        
+    }
+    .link-view{
+        @include breakpoint(mobile-max) {
+            text-decoration: none;
+            line-height: initial;
+        }
+        .ip-arrow-right{
+            font-size: 2rem;
+            font-weight: bold;
+        }
+    }
+    .custom-slider-arrows{
+        @include breakpoint(mobile-max) {
+            display: none !important;
+        }
     }
 }
 
 .lectures {
     @include breakpoint(mobile-max) {
-        padding-bottom: 5rem;
+        padding-bottom: 6.5rem;
+        background-color: $bg-color-8;
     }
     &__block {
         max-width: 41.4rem;
@@ -207,6 +282,10 @@
                 position: relative;
                 font-weight: 500;
                 margin-bottom: 1.5rem;
+                @include breakpoint(mobile-max) {
+                    font-size: 2.6rem !important;
+                    margin-bottom: 1.6rem;
+                }
             }
             p {
                 position: relative;
@@ -215,7 +294,7 @@
             .fs-4 {
                 position: relative;
                 @include breakpoint(mobile-max) {
-                    font-size: 1.4rem;
+                    font-size: 1.4rem !important;
                     font-weight: 300;
                 }
             }
@@ -227,15 +306,55 @@
             }
         }
     }
+    .link-view{
+        @include breakpoint(mobile-max) {
+            text-decoration: none;
+            line-height: initial;
+        }
+        .ip-arrow-right{
+            font-size: 2rem;
+            font-weight: bold;
+        }
+    }
+    &-slider{
+        @include breakpoint(mobile-max) {
+            margin-bottom: 3.8rem !important;
+        }
+        .slick-dots{
+            line-height: initial;
+            bottom: -3.8rem;
+            li{
+                button{
+                    @include breakpoint(mobile-max) {
+                        background-color: $inactive-slider-color;
+                        border: 0.1rem solid transparent;
+                    }
+                }
+                &.slick-active{
+                    button {
+                        @include breakpoint(mobile-max) {
+                            background-color: $active-slider-color;
+                            border-color: $active-slider-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .custom-slider-arrows{
+        @include breakpoint(mobile-max) {
+            display: none !important;
+        }
+    }
 }
 
 .socialBuzz {
     @include breakpoint(mobile-max) {
-        padding-bottom: 5rem;
+        padding-bottom: 6.5rem;
     }
     &__slider {
         @include breakpoint(mobile-max) {
-            margin: 0 -3.5rem;
+            margin: 0 -3.5rem 3.8rem !important;
         }
         &-block {
             width: 27.7rem;
@@ -256,6 +375,9 @@
                 .fa-icon {
                     font-size: 3.7rem;
                     color: #fff;
+                    @include breakpoint(mobile-max) {
+                        font-size: 5.3rem;
+                    }
                 }
             }
             .fs-4 {
@@ -268,7 +390,7 @@
                 line-height: 1.4;
                 color: #fff;
                 @include breakpoint(mobile-max) {
-                    font-size: 2.1rem;
+                    font-size: 2.1rem !important;
                 }
                 .hash-text {
                     color: $text-color-2;
@@ -330,9 +452,47 @@
         }
         .slick-track {
             padding-bottom: 3rem;
+            @include breakpoint(mobile-max) {
+                padding-bottom: 0;
+            }
         }
+        .slick-dots{
+            line-height: initial;
+            bottom: -3.8rem;
+            li{
+                button{
+                    @include breakpoint(mobile-max) {
+                        background-color: $inactive-slider-color;
+                        border: 0.1rem solid transparent;
+                    }
+                }
+                &.slick-active{
+                    button {
+                        @include breakpoint(mobile-max) {
+                            background-color: $active-slider-color;
+                            border-color: $active-slider-color;
+                        }
+                    }
+                }
+            }
+        }       
     }
+    .custom-slider-arrows{
+        @include breakpoint(mobile-max) {
+            display: none !important;
+        }
+    } 
     .progress {
         background-color: #fff;
+    }
+    .link-view{
+        @include breakpoint(mobile-max) {
+            text-decoration: none;
+            line-height: initial;
+        }
+        .ip-arrow-right{
+            font-size: 2rem;
+            font-weight: bold;
+        }
     }
 }
