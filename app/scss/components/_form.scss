@@ -1,0 +1,35 @@
+.form-control {
+    min-height: 3.8rem;
+    padding: 0.8rem 1.2rem;
+    font-weight: 400;
+    color: $text-color;
+    -webkit-text-fill-color: $text-color;
+    font-size: 1.1rem;
+    border-radius: 0;
+}
+
+.custom-selection {
+    position: relative;
+    .form-control {
+        background-color: transparent;
+        border: 0;
+        border-bottom: 1px solid $text-color;
+        min-height: auto;
+        padding: 0.5rem 0;
+        font-size: 1.5rem;
+        color: $text-color;
+        -webkit-text-fill-color: $text-color;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 0.8rem;
+        height: 0.8rem;
+        border: solid $text-color;
+        border-width: 0 0.1rem 0.1rem 0;
+        right: 0.5rem;
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+    }
+}

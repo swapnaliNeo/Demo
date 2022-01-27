@@ -1,0 +1,106 @@
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+
+// 1rem = 10px the reason why we have mention 10px in HTML.
+body {
+  font-family: $primary-font;
+  font-size: 1.5rem;
+  line-height: 1.8;
+  font-weight: 400;
+  color: $primary-color;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  &:hover, &:focus, &:active {
+    text-decoration: none;
+    color: $secondary-color;
+  }
+  // &:focus {
+  //   outline: 0.1rem solid $secondary-color !important;
+  // }
+}
+
+*:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.wrapper {
+  overflow: hidden;
+}
+
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #c8c8e2 #f1f1f1;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 0.4rem;
+  height: 0.4rem;
+}
+
+*::-webkit-scrollbar-track {
+  background: $primary-color;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: $secondary-color;
+  border-radius: 1rem;
+}
+
+.form-row>.col,
+.form-row>[class*='col-'] {
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+@keyframes wobble-vertical-on-hover {
+  16.65% {
+    -webkit-transform: translateY(0.8rem);
+    transform: translateY(0.8rem);
+  }
+  33.3% {
+    -webkit-transform: translateY(-0.6rem);
+    transform: translateY(-0.6rem);
+  }
+  49.95% {
+    -webkit-transform: translateY(0.4rem);
+    transform: translateY(0.4rem);
+  }
+  66.6% {
+    -webkit-transform: translateY(-0.2rem);
+    transform: translateY(-0.2rem);
+  }
+  83.25% {
+    -webkit-transform: translateY(0.1rem);
+    transform: translateY(0.1rem);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+
+  0% {
+    transform: rotate3d(0, 1, 0, 0);
+  }
+
+  100% {
+    transform: rotate3d(0, 1, 0, 360deg);
+  }
+
+}
+
+.rotating {
+  animation: spin 8s 0s linear infinite;
+  transform: rotateY(180deg);
+  transform-style: preserve-3d;
+}

@@ -1,0 +1,129 @@
+@import "variables";
+
+@font-face {
+  font-family: '#{$icomoon-font-family}';
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?7dbqus');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?7dbqus#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?7dbqus') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?7dbqus') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?7dbqus##{$icomoon-font-family}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="ip-"], [class*=" ip-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '#{$icomoon-font-family}' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ip-user {
+  &:before {
+    content: $ip-user; 
+  }
+}
+.ip-tick {
+  &:before {
+    content: $ip-tick; 
+  }
+}
+.ip-close {
+  &:before {
+    content: $ip-close; 
+  }
+}
+.ip-right-arrow {
+  &:before {
+    content: $ip-right-arrow; 
+  }
+}
+.ip-share {
+  &:before {
+    content: $ip-share; 
+  }
+}
+.ip-youtube {
+  &:before {
+    content: $ip-youtube; 
+  }
+}
+.ip-up-arrow {
+  &:before {
+    content: $ip-up-arrow; 
+  }
+}
+.ip-twitter {
+  &:before {
+    content: $ip-twitter; 
+  }
+}
+.ip-search {
+  &:before {
+    content: $ip-search; 
+  }
+}
+.ip-quote {
+  &:before {
+    content: $ip-quote; 
+  }
+}
+.ip-play-fill {
+  &:before {
+    content: $ip-play-fill; 
+  }
+}
+.ip-play {
+  &:before {
+    content: $ip-play; 
+  }
+}
+.ip-linkedin {
+  &:before {
+    content: $ip-linkedin; 
+  }
+}
+.ip-info {
+  &:before {
+    content: $ip-info; 
+  }
+}
+.ip-facebook {
+  &:before {
+    content: $ip-facebook; 
+  }
+}
+.ip-expand {
+  &:before {
+    content: $ip-expand; 
+  }
+}
+.ip-email {
+  &:before {
+    content: $ip-email; 
+  }
+}
+.ip-download {
+  &:before {
+    content: $ip-download; 
+  }
+}
+.ip-arrow-right {
+  &:before {
+    content: $ip-arrow-right; 
+  }
+}
+.ip-arrow-left {
+  &:before {
+    content: $ip-arrow-left; 
+  }
+}

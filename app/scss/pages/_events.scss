@@ -1,0 +1,250 @@
+.lectures-element {
+    position: relative;
+    .lectures__block {
+        max-width: 100%;
+        margin: 0.1rem;
+    }
+    .view-more {
+        position: absolute;
+        display: flex;
+        align-items: end;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.95) 80%);
+        width: 100%;
+        height: 21rem;
+    }
+}
+
+.host-lecture {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: url('#{$images-path}/host-lecture.jpg');
+    background-size: cover;
+    background-position: bottom;
+    &:before {
+        content: "";
+        position: absolute;
+        display: block;
+        @include background-color-rgba($primary-color, 0.6);
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+    &__content {
+        position: relative;
+        z-index: 1;
+        p {
+            font-weight: 300;
+        }
+    }
+    &__form {
+        position: relative;
+        z-index: 1;
+        @include background-color-rgba(#fff, 0.8);
+        padding: 2.8rem;
+        .form-group {
+            margin-bottom: 1rem;
+            .form-control {
+                background-color: transparent;
+                border: 0;
+                border-bottom: 1px solid $text-color;
+                font-size: 1.5rem;
+                font-weight: 300;
+                padding: 0.5rem 0;
+            }
+        }
+    }
+}
+
+.winners-symposium {
+    &__block {
+        display: block;
+        height: 33.2rem;
+        position: relative;
+        &-content {
+            position: absolute;
+            display: block;
+            bottom: 0;
+            left: 0;
+            padding: 2.2rem;
+            width: 100%;
+            height: auto;
+            background: linear-gradient(180deg, rgba(31, 37, 61, 0) 0%, rgba(31, 37, 61, 0.75) 100%);
+            transition: top 4s ease-out;
+            .play-icon {
+                position: relative;
+                transition: all 0.3s ease;
+            }
+            .display-4 {
+                font-weight: 500;
+                display: none;
+                transition: all 0.3s ease;
+            }
+            p {
+                display: none;
+                transition: all 0.3s ease;
+            }
+        }
+        &:hover {
+            .play-icon {
+                margin-bottom: 2rem;
+                background-color: $secondary-color;
+                border-color: $secondary-color;
+                .fa-icon {
+                    color: #fff;
+                }
+            }
+            .display-4, p {
+                display: block;
+                transition: all 0.3s ease;
+            }
+        }
+    }
+    &__edition {
+        height: 33.2rem;
+        padding: 3.5rem 5.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        transition: all 0.3s ease;
+        .fs-3 {
+            width: 80%;
+            line-height: 1.4;
+        }
+        .custom-selection {
+            width: 70%;
+            .form-control {
+                color: #fff;
+                -webkit-text-fill-color: #fff;
+                font-size: 1.3rem;
+            }
+            &::after {
+                border-color: #fff;
+            }
+        }
+        p {
+            color: $text-color;
+            font-weight: 300;
+        }
+    }
+}
+
+.resourcesLogo {
+    &__block {
+        margin-bottom: 5rem;
+        &:last-child {
+            margin-bottom: 0;
+        }
+        &-img {
+            img {
+                width: 188px;
+                height: 188px;
+                object-fit: contain;
+            }
+        }
+        &-btns {
+            .groupBtns {
+                display: flex;
+                align-items: center;
+                .btn {
+                    width: 100%;
+                    font-size: 1.5rem;
+                    padding: 1.4rem;
+                    border-color: $border-color;
+                    &.active {
+                        background-color: $primary-color;
+                        color: #fff;
+                        border-color: $primary-color;
+                    }
+                }
+            }
+        }
+        &-download {
+            border-top: 1px solid $border-color;
+            .info-btn {
+                width: 2.1rem;
+                max-width: 2.1rem;
+                flex: 0 0 2.1rem;
+                height: 2.1rem;
+                background-color: $primary-color;
+                font-size: 1rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 100%;
+                &:hover {
+                    color: $secondary-color;
+                }
+            }
+            
+        }
+    }
+}
+
+.download-btn {
+    color: $primary-color;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    .fa-icon {
+        font-size: 2rem;
+        margin-right: 1rem;
+    }
+    &:hover {
+        color: $secondary-color;
+    }
+}
+
+.photoSec {
+    &__block {
+        position: relative;
+        transition: all 0.3s ease;
+        overflow: hidden;
+        &-content {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(180deg, rgba(31, 37, 61, 0) 0%, rgba(31, 37, 61, 0.75) 100%);
+            width: 100%;
+            height: auto;
+            bottom: 0;
+            left: 0;
+            padding: 1rem;
+        }
+        &-overlay {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include background-color-rgba($primary-color, 0.4);
+            width: 100%;
+            height: 100%;
+            bottom: -100%;
+            left: 0;
+            padding: 1rem;
+            transition: all 0.3s ease;
+            .play-icon {
+                .fa-icon {
+                    font-size: 2.8rem;
+                }
+            }
+        }
+        &:hover {
+            .photoSec__block-overlay {
+                bottom: 0;
+            }
+        }
+    }
+}
+
+.brochure {
+    &-slider {
+        
+    }
+}

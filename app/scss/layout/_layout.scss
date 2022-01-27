@@ -1,0 +1,374 @@
+.container {
+    max-width: 1170px;
+    @include breakpoint(medium-large-desktop-max) {
+        max-width: 900px;
+    }
+    @include breakpoint(ipad-max) {
+        max-width: 720px;
+    }
+    @include breakpoint(mobile-max) {
+        padding: 0 3.5rem;
+    }
+}
+
+.navbar {
+    &-nav {
+        width: 100%;
+        flex-direction: row;
+        .nav-item {
+            padding: 0 1.4rem;
+            .nav-link {
+                font-size: 1.3rem;
+                font-weight: 300;
+                color: $text-color;
+                padding: 1rem 0;
+                position: relative;
+                transition: all 0.5s ease;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    display: block;
+                    background-color: $secondary-color;
+                    width: 0;
+                    height: 0.2rem;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    transition: all 0.5s ease;
+                }
+                &.active {
+                    color: #fff;
+                    &::after {
+                        width: 100%;
+                    }
+                }
+            }
+            &:hover, &:active, &:focus {
+                .nav-link {
+                    color: #fff;
+                    &::after {
+                        width: 100%;
+                    }
+                } 
+            }
+        }
+    }
+}
+
+.overlay-open {
+    overflow: hidden;
+    .header {
+        @include background-color-rgba($primary-color, 0.97);
+    }
+    .login-sec, .share-sec {
+        display: flex;
+    }
+    .search-bar, .foundation-link, .navbar {
+        display: none;
+    }
+}
+
+.search-overlay {
+    .search-close {
+        display: flex;
+    }
+    .hamburger, .navbar {
+        display: none;
+    }
+}
+
+.menu {
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: calc(100vh - 7.7rem);
+    @include background-color-rgba($primary-color, 0.97);
+    z-index: 3;
+    top: 7.7rem;
+    left: 0;
+    padding: 5rem 0;
+    transition: all 0.5s ease;
+    overflow-y: scroll;
+    opacity: 0;
+    visibility: hidden;
+    @include breakpoint(mobile-max) {
+        padding: 2rem 0;
+    }
+    @include breakpoint(custom-small-mobile-max){
+        height: calc(100vh - 8.2rem);
+    }
+    .display-3 {
+        color: $secondary-color;
+        @include breakpoint(mobile-max) {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+        }
+    }
+    &__block {
+        padding-bottom: 4rem;
+    }
+    .menu-style-1 {
+        li {
+            margin: 0.5rem 0;
+        }
+    }
+    &-active {
+        opacity: 1;
+        visibility: visible;
+        @include breakpoint(custom-small-mobile-max){
+            top: 8.2rem;
+        }
+    }
+    .foundation-link {
+        font-size: 1.8rem;
+        text-decoration: underline;
+        display: block;
+    }
+}
+
+.search-sec {
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: calc(100vh - 7.7rem);
+    @include background-color-rgba($primary-color, 0.97);
+    z-index: 3;
+    top: 7.7rem;
+    left: 0;
+    padding: 5rem 0;
+    transition: all 0.5s ease;
+    opacity: 0;
+    visibility: hidden;
+    @include breakpoint(mobile-max) {
+        padding: 5rem 0;
+    }
+    @include breakpoint(custom-small-mobile-max){
+        height: calc(100vh - 8.2rem);
+    }
+    &__inner {
+        padding-top: 6rem;
+        @include breakpoint(mobile-max) {
+            padding-top: 0;
+        }
+        .form-control {
+            background-color: transparent;
+            border: 0;
+            border-radius: 0;
+            border-bottom: 0.1rem solid $text-color-4;
+            color: #fff;
+            -webkit-text-fill-color: $text-color-4;
+            font-size: 1.7rem;
+            padding: 0.3rem 1rem;
+            @include breakpoint(mobile-max) {
+                font-size: 1.6rem;
+            }
+        }
+        .btn-search {
+            position: absolute;
+            display: block;
+            background-color: transparent;
+            border: 0;
+            padding: 0;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #fff;
+            font-size: 2.6rem;
+            &:hover {
+                color: $secondary-color;
+            }
+        }
+    }
+    &-active {
+        opacity: 1;
+        visibility: visible;
+        @include breakpoint(custom-small-mobile-max){
+            top: 8.2rem;
+        }
+    }
+}
+
+.repeatedBanner {
+    min-height: 56.8rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 9.4rem;
+    position: relative;
+    background-position: center center;
+    background-size: cover;
+    -webkit-transition: 0.4s ease;
+    transition: 0.4s ease;
+    background-attachment: fixed;
+    @include breakpoint(mobile-max) {
+        min-height: 46.8rem;
+        align-items: end;
+        padding-bottom: 3rem;
+        margin-bottom: 0;
+    }
+    img {
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+    }
+    &:before {
+        content: "";
+        position: absolute;
+        display: block;
+        background-color: $primary-color;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        opacity: 0.25;
+        transition: opacity 0.3s linear;
+    }
+    &__content {
+        z-index: 1;
+        position: relative;
+        p {
+            font-weight: 300;
+        }
+        .fs-3 {
+            font-weight: 300;
+        }
+        .display-1 {
+            font-weight: bold;
+        }
+    }
+    &:hover {
+        img {
+            transform: scale(1.04);
+        }
+        &::before {
+            opacity: 0;
+            transition: opacity 0.3s linear;
+        }
+    }
+}
+
+.parallaxBg {
+    background-position: center center;
+    background-size: cover;
+    -webkit-transition: 0.4s ease;
+    transition: 0.4s ease;
+    background-attachment: fixed;
+}
+
+.commonBanner {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    .main-img {
+        position: absolute;
+        display: block;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        top: 0;
+        left: 0;
+    }
+    &__content {
+        position: relative;
+        z-index: 2;
+        hr {
+            width: 5rem;
+            @include background-color-rgba(#E3E7EA, 0.5);
+        }
+        .display-4 {
+            font-weight: 400;
+        }
+        .display-1 {
+            font-weight: bold;
+        }
+        p {
+            font-weight: 300;
+        }
+    }
+    &__img {
+        img {
+            max-width: 25rem;
+        }
+    }
+    &-extend {
+        &::before {
+            content: "";
+            position: absolute;
+            display: block;
+            @include background-color-rgba($primary-color, 0.5);
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+    }
+}
+
+.commonContent {
+    padding: 7.1rem 0;
+    p, .fs-3 {
+        color: $primary-color;
+    }
+    &__heading {
+        padding-top: 2rem;
+        margin-top: 1rem;
+        margin-right: 2rem;
+        border-top: 0.1rem solid $text-color;
+    }
+}
+
+.commonHeight {
+    min-height: 54rem;
+    &-extend {
+        min-height: 49rem;
+        padding-bottom: 10rem;
+        &::before {
+            content: "";
+            position: absolute;
+            display: block;
+            @include background-color-rgba($primary-color, 0.5);
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+    }
+}
+
+.commonStructure {
+    &__nav {
+        padding: 0.8rem 0;
+        .nav-tabs {
+            justify-content: space-between;
+            .nav-item {
+                .nav-link {
+                    text-align: left;
+                    border: 0;
+                    font-size: 1.4rem;
+                    color: $text-color;
+                    font-weight: 300;
+                    padding: 0 0.6rem;
+                    &.active {
+                        background-color: transparent;
+                        color: $primary-color;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
+    .fs-2 {
+        color: $primary-color;
+    }
+}

@@ -1,0 +1,249 @@
+.header {
+    position: fixed;
+    display: block;
+    z-index: 99;
+    width: 100%;
+    transition: all 0.3s ease;
+    &.darkHeader {
+        @include background-color-rgba($primary-color, 0.8);
+    }
+    &__top {
+        padding: 0.7rem 0;
+        border-bottom: 0.1rem solid rgba(255, 255, 255, 0.15);
+        @include breakpoint(mobile-max) {
+            padding: 2rem 0;
+        }
+    }
+    &.dark-header {
+        @include background-color-rgba($primary-color, 0.8);
+    }
+
+    &.header-relative {
+        background-color: $primary-color;
+        position: relative;
+        &.darkHeader {
+            @include background-color-rgba($primary-color, 0.8);
+            position: fixed;
+        }
+    }
+
+    &__logo {
+        max-width: 19.4rem;
+        @include breakpoint(mobile-max) {
+            width: 18rem;
+        }
+        @include breakpoint(custom-small-mobile-max){
+            max-width: 13.5rem;
+        }
+        img {
+            object-fit: contain;
+        }
+    }
+    .foundation-link {
+        font-size: 1.3rem;
+        @include breakpoint(mobile-max) {
+            display: none;
+        }
+    }
+    button {
+        background-color: transparent;
+        border: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .fa-icon {
+        color: $border-color;
+        font-size: 2.3rem;
+        &:hover {
+            color: $secondary-color;
+        }
+    }
+    .login-sec, .share-sec, .search-close {
+        display: none;
+    }
+}
+
+.share-sec {
+    position: relative;
+    .share-btn {
+        background-color: transparent;
+        border: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &.active {
+            color: $secondary-color;
+        }
+    }
+    .share-overlay {
+        position: absolute;
+        display: none;
+        background-color: #fff;
+        padding: 1.1rem 0.9rem;
+        top: 4rem;
+        right: -1rem;
+        z-index: 2;
+        .social-media {
+            padding: 0;
+            li {
+                margin: 0 0.6rem;
+                a {
+                    display: block;
+                    width: 2.8rem;
+                    height: 2.8rem;
+                    .fa-icon {
+                        font-size: 2.8rem;
+                        color: $primary-color;
+                    }
+                    &:hover {
+                        .fa-icon {
+                            color: $secondary-color;
+                        }
+                    }
+                }
+            }
+        }
+        &::before {
+            content: "";
+            width: 0;
+            height: 0;
+            border-left: 0.7rem solid transparent;
+            border-right: 0.7rem solid transparent;
+            border-bottom: 1.6rem solid #fff;
+            top: -1.6rem;
+            right: 1.4rem;
+            position: absolute;
+            display: block;
+        }
+        &.active {
+            display: block;
+        }
+    }
+}
+
+.login-sec {
+    position: relative;
+    .login-btn {
+        background-color: transparent;
+        border: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &.active {
+            color: $secondary-color;
+        }
+    }
+    .login-overlay {
+        position: absolute;
+        display: none;
+        background-color: #fff;
+        padding: 1rem 1.3rem;
+        top: 4rem;
+        right: -1rem;
+        z-index: 2;
+        .login-link {
+            color: $primary-color;
+        }
+        &::before {
+            content: "";
+            width: 0;
+            height: 0;
+            border-left: 0.7rem solid transparent;
+            border-right: 0.7rem solid transparent;
+            border-bottom: 1.6rem solid #fff;
+            top: -1.6rem;
+            right: 1.4rem;
+            position: absolute;
+            display: block;
+        }
+        &.active {
+            display: block;
+        }
+    }
+}
+
+.hamburger {
+    width: 3.6rem;
+    height: 3.6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    &-span {
+       display: block;
+       width: 100%;
+       height: 0.2rem;
+       background-color: $border-color;
+       -webkit-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+       &:nth-child(2) {
+           margin: 0.7rem 0;
+           width: 80%;
+           margin-left: 20%;
+       }
+    }
+    &:hover {
+        .hamburger-span {
+            width: 80%;
+            margin-left: 20%;
+            background-color: $secondary-color;
+            &:nth-child(2) {
+                width: 100%;
+                margin-left: 0;
+            }
+        }
+    }
+    &.active {
+        -webkit-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        -webkit-transition-delay: 0.6s;
+        -o-transition-delay: 0.6s;
+        transition-delay: 0.6s;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+        width: 2.8rem;
+        height: 2.8rem;
+        .hamburger-span {
+            &:nth-child(2){
+                width: 0;
+            }
+            &:nth-child(1), &:nth-child(3) {
+                -webkit-transition-delay: 0.3s;
+                -o-transition-delay: 0.3s;
+                transition-delay: 0.3s;
+            }
+            &:nth-child(1){
+                -webkit-transform: translateY(1rem);
+                -ms-transform: translateY(1rem);
+                -o-transform: translateY(1rem);
+                transform: translateY(1rem);
+            }
+            &:nth-child(3){
+                -webkit-transform: translateY(-0.8rem) rotate(90deg);
+                -ms-transform: translateY(-0.8rem) rotate(90deg);
+                -o-transform: translateY(-0.8rem) rotate(90deg);
+                transform: translateY(-0.8rem) rotate(90deg);
+            }
+        }
+        &:hover {
+            .hamburger-span {
+                width: 100%;
+                margin-left: 0;
+                background-color: $secondary-color;
+                &:nth-child(2){
+                    width: 0;
+                }
+            }
+            transform: rotate(135deg);
+        }
+    }
+}

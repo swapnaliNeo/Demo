@@ -1,0 +1,99 @@
+.commonBlock {
+    p, .display-2, .fs-3 {
+        color: $primary-color;
+    }
+    &__block {
+        margin: 0.1rem;
+        position: relative;
+        height: 100%;
+        img {
+            width: 100%;
+            height: 20.8rem;
+            object-fit: cover;
+        }
+        &-content {
+            padding: 2.1rem 1.8rem;
+            .fs-4 {
+                font-weight: 500;
+                color: $primary-color;
+            }
+            p {
+                font-size: 1.3rem;
+            }
+            .news-meta {
+                color: $primary-color;
+                &__tag {
+                    &::after {
+                        background-color: $primary-color;
+                    }
+                }
+            }
+            .link-page {
+                font-size: 1rem;
+                color: $primary-color;
+                &:hover {
+                    color: $secondary-color;
+                }
+            }
+        }
+        &:hover {
+            box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.15);
+        }
+    }
+}
+
+.announcements {
+    padding: 3.8rem 0 7rem;
+    &__block {
+        padding: 2.8rem 0;
+        .hr {
+            width: 5rem;
+            background-color: $primary-color;
+        }
+        &-heading {
+            .display-4 {
+                color: $primary-color;
+                font-weight: bold;
+            }
+        }
+        &-content {
+            .fs-3 {
+                font-weight: 500;
+                color: $primary-color;
+            }
+            p {
+                font-weight: 300;
+                color: $primary-color;
+            }
+            a {
+                color: $text-color-3;
+                &:hover {
+                    color: $secondary-color;
+                }
+            }
+            .news-meta {
+                font-size: 1.5rem;
+                color: $primary-color;
+                font-weight: 500;
+                &__tag {
+                    &:after {
+                        background-color: $primary-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.announcements-slider {
+    .main-banner__slider {
+        height: 49rem;
+        &-content {
+            align-items: flex-end;
+            padding-bottom: 8rem;
+        }
+    }
+    .slider-dots {
+        bottom: 8%;
+    }
+}

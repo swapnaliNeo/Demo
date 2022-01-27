@@ -1,0 +1,32 @@
+.btn {
+    background-color: transparent;
+    padding: 1.4rem 3.5rem;
+    font-size: 1rem;
+    border-radius: 0;
+    text-transform: uppercase;
+    color: $primary-color;
+    border-color: $primary-color;
+    &:hover, &:active, &:focus {
+        background-color: $primary-color;
+        color: #fff;
+        border-color: $primary-color;
+    }
+    &-primary {
+        color: #fff;
+        border-color: #fff;
+        &:hover, &:active, &:focus {
+            background-color: $primary-color;
+            color: #fff;
+            border-color: $primary-color;
+        }
+    }
+    &-secondary {
+        background-color: $primary-color;
+        color: #fff;
+        border-color: $text-color;
+        &:hover {
+            background-color: $text-color;
+            border-color: $text-color;
+        }
+    }
+}

@@ -1,0 +1,460 @@
+.laureates {
+    &__listing {
+        @include breakpoint(mobile-max) {
+            margin: 0 -3.5rem;
+        }
+        &__block {
+            height: 42.6rem;
+            flex: 1;
+            transition: 1s;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.8s ease;
+            overflow: hidden;
+            @include breakpoint(ipad-max) {
+                width: 34rem;
+                height: 33.8rem;
+            }
+            @include breakpoint(custom-small-mobile-max){
+                width: 32rem;
+            }
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                filter: grayscale(1);
+                object-position: top;
+            }
+            &.slick-active {
+                img {
+                    @include breakpoint(ipad-max) {
+                        filter: none;
+                    }
+                }
+                .laureates__listing__block-content {
+                    @include breakpoint(ipad-max) {
+                        opacity: 1;
+                    }
+                }
+                &:before {
+                    @include breakpoint(ipad-max) {
+                        content: "";
+                        position: absolute;
+                        display: block;
+                        width: 100%;
+                        height: 90%;
+                        background: linear-gradient(180deg, rgba(31,37,61,0) 0%, rgba(31,37,61,0.804359243697479) 100%);
+                        bottom: 0;
+                        left: 0;
+                    }
+                }
+            }
+            &-content {
+                position: absolute;
+                padding: 1.6rem;
+                width: 100%;
+                height: auto;
+                bottom: 0;
+                left: 0;
+                opacity: 0;
+                transition: all .5s ease-in-out;
+                min-width: 250px;
+                .fs-6 {
+                    color: #fff;
+                    font-weight: 400;
+                    position: relative;
+                    transition: all .5s ease-in-out;
+                }
+                hr {
+                    background-color: $bg-color-5;
+                    width: 2.6rem;
+                    transition: all .5s ease-in-out;
+                }
+                .display-3 {
+                    font-size: 1.8rem;
+                    color: #fff;
+                    position: relative;
+                    transition: all .5s ease-in-out;
+                    font-weight: bold;
+                }
+                p {
+                    font-size: 1rem;
+                    color: #fff;
+                    font-weight: 300;
+                    position: relative;
+                    transition: all .5s ease-in-out;
+                }
+                &:before {
+                    content: "";
+                    position: absolute;
+                    display: none;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(180deg, rgba(31,37,61,0) 0%, rgba(31,37,61,1) 90%);
+                    bottom: 0;
+                    left: 0;
+                    @include breakpoint(mobile-max) {
+                        display: none;
+                    }
+                }
+            }
+            &:hover {
+                flex: 2;
+                img {
+                    filter: none;
+                }
+                .laureates__listing__block-content {
+                    opacity: 1;
+                    transition: all .5s ease-in-out;
+                    &:before {
+                        display: block;
+                    }
+                    .fs-6, .display-3, p, hr{
+                        transform: translateY(-15px);
+                    }
+                }
+            }
+            &:nth-child(2), &:nth-child(4), &:nth-child(6) {
+                margin-top: 4.2rem;
+                @include breakpoint(ipad-max) {
+                    margin-top: 0;
+                }
+            }
+            &:nth-child(3) {
+                margin-top: 8.5rem;
+                @include breakpoint(ipad-max) {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+    &__slider {
+        background-color: $primary-color;
+        .slick-slide {
+            position: relative;
+            img {
+                height: 57.5rem;
+                object-fit: cover;
+            }
+        }
+        &-content {
+            position: absolute;
+            display: block;
+            @include background-color-rgba(#fff, 0.82);
+            padding: 2.8rem 2.8rem 2.1rem;
+            bottom: 14rem;
+            left: 32.33%;
+            transform: translateX(-50%);
+            max-width: 40.5rem;
+            hr {
+                width: 5rem;
+                background-color: $text-color;
+            }
+            .news-meta {
+                color: $primary-color;
+                font-size: 1.3rem;
+                font-weight: 500;
+                &__tag {
+                    &::after {
+                        background-color: $primary-color;
+                    }
+                }
+            }
+            .fs-3, .fs-4 {
+                color: $primary-color;
+            }
+            p {
+                font-size: 1.3rem;
+                font-weight: 300;
+                color: $primary-color;
+            }
+            .link {
+                color: $primary-color;
+                &:hover {
+                    color: $secondary-color;
+                }
+            }
+        }
+        &-nav {
+            position: absolute;
+            display: block;
+            bottom: 5%;
+            left: 10rem;
+            transform: translateY(-50%);
+            width: 9rem;
+        }
+    }
+}
+
+.mainBanner {
+    min-height: 43rem;
+    padding-bottom: 10rem;
+    &::before {
+        content: "";
+        position: absolute;
+        display: block;
+        @include background-color-rgba($primary-color, 0.16);
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+}
+
+.laureates-slider {
+    margin-left: 17.50%;
+    &__block {
+        border: 1px solid $border-color-4;
+        width: 28rem;
+        height: 20.6rem;
+        position: relative;
+        margin: 0 0.1rem;
+        &-content {
+            position: absolute;
+            display: block;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            padding: 1rem 1.8rem;
+            .fs-6 {
+                font-weight: 500;
+                color: $primary-color;
+            }
+            p {
+                font-size: 1rem;
+                color: $primary-color;
+            }
+            .link-page {
+                color: $primary-color;
+                font-size: 1.4rem;
+                &:hover {
+                    color: $secondary-color;
+                }
+            }
+        }
+    }  
+}
+
+.big-text {
+    font-size: 284px;
+    position: absolute;
+    display: block;
+    top: 3rem;
+    left: 6%;
+    line-height: 1;
+    @include color-rgba($bg-color-5, 0.7);
+    font-weight: bold;
+    z-index: -1;
+}
+
+.commonSlider {
+    .jury__slider {
+        position: relative;
+        .slick-slide {
+            position: relative;
+            padding-top: 9.2rem;
+        }
+        
+        &__row {
+            background-color: transparent;
+        }
+        &-person__content {
+            p {
+                display: block;
+            }
+            .fs-5 {
+                position: relative;
+                color: #fff;
+            }
+        }
+    }
+    .vertical-year {
+        right: auto;
+        left: 10rem;
+        top: 65%;
+    }
+    &-extend {
+        .back-btn {
+            color: $primary-color;
+            position: relative;
+            z-index: 9;
+            &:hover {
+                color: $secondary-color;
+            }
+        }
+        .fs-2 {
+            position: relative;
+            z-index: 9;
+        }
+        .big-text {
+            top: -14rem;
+            left: -16%;
+        }
+        .jury__slider {
+            .slick-list {
+                // overflow: visible;
+            }
+        }   
+        .vertical-year {
+            right: auto;
+            left: 10rem;
+            top: 35%;
+        }
+    }
+}
+
+.timeline {
+    padding: 6.4rem 0;
+    &__slider {
+        padding-top: 5rem;
+        .display-2, .fs-3, .fs-4 {
+            @include color-rgba($text-color, 0.5);
+        }
+        .year-big {
+            font-size: 15.6rem;
+            font-weight: 600;
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 50%;
+            line-height: 0.8;
+            transform: translateX(-50%);
+            @include color-rgba($text-color, 0.1);
+            opacity: 0;
+        }
+        .slick-slide {
+            width: 35.4rem;
+            padding: 0 4.6rem;
+            padding-top: 2rem;
+            position: relative;
+            &:before {
+                content: "";
+                position: absolute;
+                display: block;
+                width: 0.1rem;
+                height: 11.4rem;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                background-color: #fff;
+            }
+            &.slick-current {
+                width: 50rem;
+                padding: 0 11.4rem;
+                padding-top: 2rem;
+                .display-2 {
+                    color: $secondary-color;
+                }
+                .fs-3, .fs-4 {
+                    color: #fff;
+                }
+                .year-big {
+                    opacity: 1;
+                }
+            }
+        }
+
+        &-nav {
+            padding-top: 8rem;
+            .slick-list {
+                padding-top: 3rem;
+                &:before {
+                    content: "";
+                    position: absolute;
+                    display: block;
+                    background-color: $secondary-color;
+                    width: 100%;
+                    height: 0.1rem;
+                    top: 0.85rem;
+                    left: 0;
+                }
+            }
+            .slick-slide {
+                font-size: 1.5rem;
+                font-weight: 300;
+                color: $text-color;
+                width: 10%;
+                &:before {
+                    content: "";
+                    position: absolute;
+                    display: block;
+                    background-color: $text-color;
+                    width: 0.8rem;
+                    height: 0.8rem;
+                    border-radius: 100%;
+                    top: -2.5rem;
+                }
+                &.slick-current {
+                    font-size: 2rem;
+                    color: $secondary-color;
+                    font-weight: 600;
+                    &:before {
+                        width: 1.2rem;
+                        height: 1.2rem;
+                        background-color: $secondary-color;
+                        border: 0.2rem solid #fff;
+                        top: -2.8rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .custom-arrows {
+        border-top: 0;
+        padding-top: 7rem;
+        &::before {
+            display: none;
+        }
+        .arrow-btn {
+            .fa-icon {
+                color: $secondary-color;
+            }
+        }
+    }
+}
+
+.laureatesDeatails {
+    min-height: 49rem;
+    display: flex;
+    align-items: flex-end;
+    padding: 5.8rem 0;
+    overflow: hidden;
+    &__content {
+        hr {
+            width: 7rem;
+            background-color: $text-color;
+        }
+        .fs-4 {
+            color: $text-color;
+        }
+        .share-icon {
+            .fa-icon {
+                font-size: 2.2rem;
+                color: $text-color;
+            }
+            &:hover {
+                .fa-icon {
+                    color: $secondary-color;
+                }
+            }
+        }
+    }
+    &__img {
+        .main-img {
+            position: absolute;
+            display: block;
+            top: 0;
+            width: 50%;
+            max-height: 100%;
+            right: 0;
+            bottom: 0;
+            object-fit: cover;
+        }
+        .play-icon {
+            bottom: 4.5rem;
+            margin-left: 3rem;
+        }
+    }
+}
